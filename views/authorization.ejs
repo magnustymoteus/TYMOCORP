@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONFIRM YOUR ECHELON</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/AUTH/auth-customstyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="fullscreen-bg bg-danger d-flex align-items-center justify-content-center text-center"  id="bg-fs">
+        <div class="d-flex align-items-center justify-content-center text-white row" style="height: 350px;" id="auth-div">
+       <h2 id="fake-auth" class="loading-anim">AWAITING CREDENTIAL INPUT</h2><div id="authorized-gif"></div>
+        <form method="POST" id="auth-form">
+            <label for="key">Authenticator</label>
+            <input name="key" id="key" type="password" class="text-white bg-danger border" required>
+            <input type="submit" value="Enter" id="submit-btn">
+        </form>
+        </div><div id="video"></div>
+    </div>
+</body>
+<script src="auth-viewcomponent.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</html>

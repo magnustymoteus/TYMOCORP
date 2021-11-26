@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+@font-face {
+    font-family: Univ-Regular;
+    src: url(../fonts/Univ-Regular.ttf);
+  }
+.univcoin {
+    font-weight:lighter;
+    font-family: Univ-Regular;
+}
+tr, #headerh4 {
+  font-weight: bold;
+}
+td:hover, .fas:hover {
+  cursor: pointer;
+}
+#ftco-sec-1 {
+  animation: fadein 3s;
+}
+body {
+  background-color: #131212;
+  font-family: 'Roboto Mono', monospace;
+}
+@keyframes fadein {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+.fas {
+  color: #575454;
+}
+.fas:hover {
+  color: white;
+}
+#left-arrow {
+  left: 20px;
+}
+#right-arrow {
+  right: 0;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYMOCORP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/HOME/home-customstyle.css" rel="stylesheet">
+</head>
+<body>
+    <section class="ftco-section" id="ftco-sec-<%=page%>">
+        <div class="position-relative">
+            <% if(page!=1){%><div class="position-absolute top-50 start-0 mx-5"> <a href="/HOME?page=<%= Number(page)-1 %>"><i class="fas fa-arrow-left display-2"></i></a></div><%}%>
+            <% if(citizens.length!=20*page){%><div class="position-absolute top-50 end-0 mx-5"> <a href="/HOME?page=<%= Number(page)+1 %>"><i class="fas fa-arrow-right display-2"></i></a></div><%}%>
+    <div class="container">
+        <div class="container h-100 text-center">
+                <h4 class="heading-section text-white h4 m-2" id="headerh4">Citizens of UNIV</h2>
+        </div>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="table-responsive">
+    <table class="table table-bordered table-dark table-hover">
+        <thead>
+            <th scope="col">CitizenID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">UNIV Credits</th>
+            <th scope="col">Echelon</th>
+            <th scope="col">Threat Level</th>
+        </thead>
+        <tbody>
+            <% for(let i=((page-1)*20);i<page*20;i++) { %>
+                <tr>
+                    <td><%=citizens[i].citizen_univID%></td>
+                    <td><%=citizens[i].citizen_fullname%></td>
+                    <td><span class="univcoin">U </span><%=citizens[i].citizen_univCreds%></td>
+                    <td><%=citizens[i].citizen_echelon%></td>
+                    <td id="tlvl"><%=citizens[i].citizen_threatLevel%></td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+</section>
+</body>
+<script src="home-viewcomponent.js"></script>
+<script src="https://kit.fontawesome.com/192d617f89.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</html>
