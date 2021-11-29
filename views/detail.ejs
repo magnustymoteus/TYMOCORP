@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject: <%=citizen.citizen_fullname%></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/DETAIL/detail-customstyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="jumbotron d-flex align-items-center min-vh-100">
+        <div class="container text-center">
+            <div class="position-absolute top-50 start-0 mx-5"><a href="/HOME/"><i class="fas fa-arrow-left display-2"></i></a></div>
+            <img src="/images/tymocorp_full_logo_white.png" class="img-fluid mb-5 animate__animated animate__zoomIn animate__slow">
+            <div class="table-responsive container bg-dark text-white justify-content-center text-center p-5 w-75">
+            <table class="table-responsive table-bordered table-sm">
+                <thead>
+                    <th scope="col">CitizenID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">UNIV Credits</th>
+                    <th scope="col">Echelon</th>
+                    <th scope="col">Threat Level</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Violations</th>
+                </thead>
+            <tbody class="h6">
+            <td><%=citizen.citizen_univID%></td>
+            <td><%=citizen.citizen_fullname%></td>
+            <td><%=citizen.citizen_age%></td>
+            <td><span class="univcoin">U </span><%=citizen.citizen_univCreds%></td>
+            <td><%=citizen.citizen_echelon%></td>
+            <td id="tlvl"><%=citizen.citizen_threatLevel%></td>
+            <td><%=citizen.citizen_location%></td>
+            <td><%=(!citizen.citizen_violations)?"None":citizen.citizen_violations%></td>
+            </tbody>
+            </table>
+            <!-- <%if(citizen.citizen_threatLevel!=10) {%><button class="mt-5 btn-outline-danger text-white btn">Declare T.O.S</button> <%}%>
+            <%if(citizen.citizen_threatLevel!=9) {%><button class="mt-5 btn-outline-danger text-white btn">Declare Wanted</button><%}%> -->
+        </div>
+        </div>
+      </div>
+</body>
+<script src="detail-viewcomponent.js"></script>
+<script src="https://kit.fontawesome.com/192d617f89.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+</html>

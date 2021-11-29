@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+@font-face {
+    font-family: Univ-Regular;
+    src: url(../fonts/Univ-Regular.ttf);
+  }
+.univcoin {
+    font-weight:lighter;
+    font-family: Univ-Regular;
+}
+body {
+    background-color: #131212;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+  }
+img {
+  width: 40%;
+  }
+.fas {
+    color: #575454;
+}
+  .fas:hover {
+    color: white;
+  }
+  #left-arrow {
+    left: 20px;
+  }
+  #right-arrow {
+    right: 0;
+  }

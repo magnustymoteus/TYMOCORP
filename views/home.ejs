@@ -14,9 +14,6 @@
             <% if(page!=1){%><div class="position-absolute top-50 start-0 mx-5"> <a href="/HOME?page=<%= Number(page)-1 %>"><i class="fas fa-arrow-left display-2"></i></a></div><%}%>
             <% if(citizens.length!=20*page){%><div class="position-absolute top-50 end-0 mx-5"> <a href="/HOME?page=<%= Number(page)+1 %>"><i class="fas fa-arrow-right display-2"></i></a></div><%}%>
     <div class="container">
-        <div class="container h-100 text-center">
-                <h4 class="heading-section text-white h4 m-2" id="headerh4">Citizens of UNIV</h2>
-        </div>
     <div class="row">
     <div class="col-md-12">
     <div class="table-responsive">
@@ -30,7 +27,7 @@
         </thead>
         <tbody>
             <% for(let i=((page-1)*20);i<page*20;i++) { %>
-                <tr>
+                    <tr onclick="window.location='/DETAIL?id=<%=i%>'">
                     <td><%=citizens[i].citizen_univID%></td>
                     <td><%=citizens[i].citizen_fullname%></td>
                     <td><span class="univcoin">U </span><%=citizens[i].citizen_univCreds%></td>
@@ -45,6 +42,7 @@
     </div>
 </div>
 </div>
+<footer class="text-center text-white small h6">&copy; Patryk Pilichowski</footer>
 </section>
 </body>
 <script src="home-viewcomponent.js"></script>

@@ -41,19 +41,27 @@ app.post('/AUTH/SUBMIT', jsonParser, async(req,res) => {
 app.get("/HOME", async(req,res) => {
     if(req.session.authorized) {
         if(!req.session.citizens) {
-            fetch("https://my.api.mockaroo.com/tymocorp_citizens.json?key=016bd6f0")
+            fetch("https://my.api.mockaroo.com/tymocorp_citizens2.json?key=016bd6f0")
             .then((res) => res.json())
             .then((data) => {
                 req.session.citizens = data;
-                res.render('home.ejs', {citizens: req.session.citizens, page: (req.query.page)?req.query.page:1});
+                res.render('home.ejs', {citizens: req.session.citizens, page: (req.query.page>0&&req.query.page*20<=citizens.length)?req.query.page:1});
             });
         }
         else {
-            res.render('home.ejs', {citizens: req.session.citizens, page: (req.query.page)?req.query.page:1});
+            res.render('home.ejs', {citizens: req.session.citizens, page: (req.query.page>0&&req.query.page*20<=req.session.citizens.length)?req.query.page:1});
         }
     }
     else {
         res.redirect('/AUTH');}
+});
+app.get("/DETAIL", async(req, res) => {
+    if(req.session.authorized) {
+        if(req.session.citizens) {
+            res.render('detail.ejs', {citizen: req.session.citizens[req.query.id]});
+        }
+        else res.redirect('/AUTH');
+    }
 });
 app.get("/", async(req, res) => {
     res.redirect("/AUTH");
